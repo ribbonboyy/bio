@@ -108,7 +108,15 @@
     <span>BUILDING</span><span>BUILDING</span><span>BUILDING</span>
   </div>
 
+  <!-- Lightbox Overlay -->
+  <div id="lightbox-overlay">
+    <span id="lightbox-close">✖</span>
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
+
   <script>
+  (() => {
+    // === MUSIC PLAYER ===
     const overlay = document.getElementById('overlay');
     const playPauseBtn = document.getElementById('play-pause');
     const prevBtn = document.getElementById('prev');
@@ -156,12 +164,26 @@
       currentIndex = (currentIndex + 1) % playlist.length;
       updateSong();
     });
+
+    // === LIGHTBOX FUNCTIONALITY ===
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const images = document.querySelectorAll('.gallery-item img, .sticker-item img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxOverlay.classList.add('show');
+      });
+    });
+
+    lightboxOverlay.addEventListener('click', e => {
+      if(e.target === lightboxOverlay || e.target === lightboxClose) {
+        lightboxOverlay.classList.remove('show');
+      }
+    });
+  })();
   </script>
-  <!-- Lightbox Overlay -->
-<div id="lightbox-overlay">
-  <span id="lightbox-close">✖</span>
-  <img id="lightbox-img" src="" alt="Preview">
-</div>
 </body>
 </html>
-
