@@ -109,5 +109,14 @@
     <span>BUILDING</span><span>BUILDING</span><span>BUILDING</span>
     <span>BUILDING</span><span>BUILDING</span><span>BUILDING</span>
   </div>
+  <script>
+const overlay = document.getElementById('overlay');
+
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  // Optional: start music if you have a YouTube player
+  if (typeof player !== 'undefined') player.playVideo();
+});
+</script>
 </body>
 </html>
