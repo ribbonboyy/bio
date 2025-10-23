@@ -240,25 +240,32 @@ header h1 {
   margin-bottom: 6px;
 }
 
-/* random floating/sticker images */
+/* === FLOATING STICKERS === */
 .sticker {
   position: absolute;
-  z-index: 1;
   width: 120px;
-  transform: rotate(var(--rot, 0deg));
-  filter: drop-shadow(4px 4px 0 black);
-  transition: transform 0.2s ease;
+  height: auto;
+  opacity: 0.9;
+  z-index: 2;
+  transition: transform 0.3s ease;
 }
 
 .sticker:hover {
-  transform: scale(1.1) rotate(var(--rot, 0deg));
+  transform: rotate(6deg) scale(1.1);
+  opacity: 1;
 }
 
-/* example positions for chaos */
-.sticker-1 { top: 80px; left: 40px; --rot: -5deg; }
-.sticker-2 { top: 400px; right: 60px; --rot: 4deg; }
-.sticker-3 { bottom: 140px; left: 100px; --rot: 8deg; }
-.sticker-4 { bottom: 80px; right: 80px; --rot: -8deg; }
+/* random placements */
+.sticker-1 { top: 5%; left: 10%; }
+.sticker-2 { top: 20%; right: 8%; }
+.sticker-3 { bottom: 10%; left: 15%; }
+.sticker-4 { top: 50%; left: 5%; }
+.sticker-5 { top: 65%; right: 10%; }
+.sticker-6 { bottom: 15%; right: 5%; }
+.sticker-7 { top: 10%; right: 35%; }
+.sticker-8 { top: 75%; left: 30%; }
+.sticker-9 { bottom: 5%; left: 40%; }
+.sticker-10 { top: 30%; right: 25%; }
 
 /* tweak the gallery slightly to fit new vibe */
 .gallery {
