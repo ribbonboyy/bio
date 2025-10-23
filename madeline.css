@@ -153,22 +153,30 @@ header h1 {
 }
 
 .gallery {
-  background: #0969ff;
+  background: transparent; 
   color: white;
   text-align: center;
-  padding: 60px 20px;
-  border-top: 5px solid red;
-  border-bottom: 5px solid yellow;
+  padding: 80px 20px 100px 20px;
   position: relative;
+}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 90, 255, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: -1;
 }
 
 .gallery-title {
   font-size: 48px;
-  color: yellow;
+  color: #d9ebff;
   font-weight: 900;
   margin-bottom: 40px;
-  text-shadow: 2px 2px 0 red;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   text-transform: lowercase;
+  letter-spacing: 1px;
 }
 
 .gallery-grid {
@@ -180,31 +188,33 @@ header h1 {
 }
 
 .gallery-item {
-  background: white;
-  border: 4px solid black;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 10px;
-  box-shadow: 5px 5px 0 red;
-  transform: rotate(-1deg);
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item:hover {
-  transform: rotate(1deg) scale(1.05);
-  box-shadow: 7px 7px 0 yellow;
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .gallery-item img {
   width: 100%;
   display: block;
+  border-radius: 6px;
 }
 
 .caption {
-  background: yellow;
-  color: black;
-  font-weight: bold;
-  padding: 5px;
-  font-family: 'Comic Neue', cursive;
   margin-top: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #e7f1ff;
+  font-weight: 600;
+  padding: 6px 0;
+  font-family: "Comic Neue", cursive;
+  border-radius: 5px;
   text-transform: lowercase;
 }
 
@@ -212,16 +222,6 @@ header h1 {
   margin-top: 40px;
   font-style: italic;
   font-size: 18px;
-  color: white;
+  color: #cde6ff;
   opacity: 0.9;
 }
-
-@keyframes hueRoll {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
-}
-
-.gallery:hover {
-  animation: hueRoll 5s linear infinite;
-}
-
