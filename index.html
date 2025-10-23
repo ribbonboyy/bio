@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="madeline.css">
 </head>
 <body>
+  <!-- Full-page blur overlay -->
+<div id="overlay">
+  <span class="overlay-text">Click to enter</span>
+</div>
+  <!-- Full-page overlay -->
+  <div id="overlay">
+    <button id="enter-site">Enter Site / Play Music ▶️</button>
+  </div>
+
   <div class="bg-layer">
     <span class="bg-word">CLOUD</span>
     <span class="bg-word">CLOUD</span>
@@ -34,6 +43,20 @@
         <a href="https://discord.gg/sixsevenn" target="_blank" class="btn">discord.gg/sixsevenn (owner)</a>
         <a href="https://discord.gg/queef" target="_blank" class="btn">discord.gg/queef (ex-head admin)</a>
         <a href="https://discord.gg/ammo" target="_blank" class="btn">discord.gg/ammo (ex-staff)</a>
+      </div>
+
+      <!-- Music Player -->
+      <div class="music-player">
+        <div class="song-title">
+          <marquee behavior="scroll" direction="left" scrollamount="5">Loading album...</marquee>
+        </div>
+        <div class="controls">
+          <button id="prev" class="music-btn">⏮️</button>
+          <button id="play-pause" class="music-btn">⏯️</button>
+          <button id="next" class="music-btn">⏭️</button>
+        </div>
+        <!-- Hidden YouTube player -->
+        <div id="yt-player" style="display:none;"></div>
       </div>
     </section>
 
