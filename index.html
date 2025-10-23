@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="madeline.css">
 </head>
 <body>
+
   <!-- Full-page blur overlay -->
   <div id="overlay">
     <span class="overlay-text">Click to enter</span>
   </div>
 
+  <!-- Background words -->
   <div class="bg-layer">
     <span class="bg-word">CLOUD</span>
     <span class="bg-word">CLOUD</span>
@@ -27,10 +29,11 @@
   </header>
 
   <main>
+    <!-- Intro section -->
     <section class="intro">
       <img src="rainbowdash.png" alt="pfp" class="pfp">
       <p>
-        ayo ahaha i make the <em>BEST</em> discord sererver lololoo, below are my favourite discord servers i worked on, there's more tho<br>
+        ayo ahaha i make the <em>BEST</em> discord server lololoo, below are my favourite discord servers i worked on, there's more tho<br>
         i am super cold <span class="highlight-box">and rich</span> and <span class="highlight-box">awesome</span>
       </p>
       <a href="https://www.roblox.com/users/160253710/profile" target="_blank" class="btn">Visit My Roblox</a>
@@ -51,13 +54,55 @@
           <button id="play-pause" class="music-btn">⏯️</button>
           <button id="next" class="music-btn">⏭️</button>
         </div>
-        <!-- Hidden YouTube player -->
         <div id="yt-player" style="display:none;"></div>
       </div>
     </section>
 
-    <!-- The rest of your sections stay the same: random, sticker-gallery, gallery, footer -->
+    <!-- Random section -->
+    <section class="random">
+      <img src="rainbowdash2.jpg" class="rand-img" alt="random1">
+      <img src="pinkpony.jpg" class="rand-img" alt="random2">
+      <p class="desc">
+        i build <span class="highlight">servers</span> • i abuse my <span class="highlight">admin powers</span> • i am so <span class="highlight">cAWESOME!</span>
+      </p>
+    </section>
 
+    <!-- Sticker Gallery -->
+    <section class="sticker-gallery">
+      <h2 class="sticker-title">random pics lol</h2>
+      <div class="sticker-grid">
+        <div class="sticker-item"><img src="DEATHmlp.jpg" alt="sticker1"></div>
+        <div class="sticker-item"><img src="tuffmlp.jpg" alt="sticker2"></div>
+        <div class="sticker-item"><img src="mlpmemeahaha.jpeg" alt="sticker3"></div>
+        <div class="sticker-item"><img src="360_F_361315134_h5pHTPdWrgtA2tdAjyf7EnbxCm9FQhcx.jpg" alt="sticker4"></div>
+        <div class="sticker-item"><img src="charlie-kirk.gif" alt="sticker5"></div>
+        <div class="sticker-item"><img src="g56bAb3z_400x400.jpg" alt="sticker6"></div>
+        <div class="sticker-item"><img src="megamind-blogroll-1709250326840.png" alt="sticker7"></div>
+        <div class="sticker-item"><img src="YESSCREENSHOT.png" alt="sticker8"></div>
+        <div class="sticker-item"><img src="vgggcutcatcatcatwhite.png" alt="sticker9"></div>
+        <div class="sticker-item"><img src="21c33e0720452555585257723e1133cfa188da24.webp" alt="sticker10"></div>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="gallery">
+      <h2 class="gallery-title">gallery thing</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="c649f4d92f7abad1ec198ebaa3795190.png" alt="gallery1"><div class="caption">my fursona (not a furry anymore)</div></div>
+        <div class="gallery-item"><img src="444b360d2ea9cf4afc5a748b544ad78b.png" alt="gallery2"><div class="caption">jew</div></div>
+        <div class="gallery-item"><img src="images.jpeg" alt="gallery3"><div class="caption">yes</div></div>
+        <div class="gallery-item"><img src="astolfodrawing.png" alt="gallery4"><div class="caption">I DREW this in WHITEBOARD On disc btw</div></div>
+        <div class="gallery-item"><img src="66f10ae4a6656cecfdb72269_Black Cat PFP 400x400 (10).png" alt="gallery5"><div class="caption">me after installing linux</div></div>
+        <div class="gallery-item"><img src="hailproject.gif" alt="gallery6"><div class="caption">rip hail bruh he wont be missed</div></div>
+      </div>
+      <p class="gallery-footnote">i dont fucking know why i have this i just thought it's cool</p>
+    </section>
+
+    <section class="footer">
+      <div class="footer-box">
+        <p>i am weird</p>
+      </div>
+    </section>
   </main>
 
   <div class="background-words">
@@ -65,64 +110,54 @@
     <span>BUILDING</span><span>BUILDING</span><span>BUILDING</span>
   </div>
 
+  <!-- YouTube API -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-  let player;
-  const playlistId = 'OLAK5uy_lGdnlr2eAW0EPSgccQoeCwHGkEQ_xCF5I';
-  const overlay = document.getElementById('overlay');
-  const playPauseBtn = document.getElementById('play-pause');
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
-  const songTitle = document.querySelector('.music-player marquee');
+    let player;
+    const playlistId = 'OLAK5uy_lGdnlr2eAW0EPSgccQoeCwHGkEQ_xCF5I'; // Example playlist
+    const overlay = document.getElementById('overlay');
+    const songTitle = document.querySelector('.music-player marquee');
+    const playPauseBtn = document.getElementById('play-pause');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
 
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('yt-player', {
-      height: '0',
-      width: '0',
-      playerVars: {
-        listType: 'playlist',
-        list: playlistId,
-        autoplay: 0
-      },
-      events: {
-        onStateChange: updateTitle
-      }
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-player', {
+        height: '0',
+        width: '0',
+        playerVars: {
+          listType: 'playlist',
+          list: playlistId,
+          autoplay: 0
+        },
+        events: {
+          onStateChange: updateTitle
+        }
+      });
+    }
+
+    function updateTitle() {
+      if (!player) return;
+      const title = player.getVideoData().title;
+      if (title) songTitle.textContent = title;
+    }
+
+    // Click overlay to enter site and start music
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      if (player) player.playVideo();
     });
-  }
 
-  function updateTitle() {
-    if (!player) return;
-    const playlistIndex = player.getPlaylistIndex();
-    const playlist = player.getPlaylist();
-    if (playlist && playlist[playlistIndex]) {
-      songTitle.textContent = playlist[playlistIndex].title || "Song playing...";
-    }
-  }
+    // Music controls
+    playPauseBtn.addEventListener('click', () => {
+      if (!player) return;
+      const state = player.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) player.pauseVideo();
+      else player.playVideo();
+    });
 
-  // Overlay click: remove blur + start music
-  overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    if (player) player.playVideo();
-  });
-
-  // Music player controls
-  playPauseBtn.addEventListener('click', () => {
-    if (!player) return;
-    const state = player.getPlayerState();
-    if (state === YT.PlayerState.PLAYING) {
-      player.pauseVideo();
-    } else {
-      player.playVideo();
-    }
-  });
-
-  prevBtn.addEventListener('click', () => {
-    if (player) player.previousVideo();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (player) player.nextVideo();
-  });
+    prevBtn.addEventListener('click', () => { if (player) player.previousVideo(); });
+    nextBtn.addEventListener('click', () => { if (player) player.nextVideo(); });
   </script>
 </body>
 </html>
