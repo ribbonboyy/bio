@@ -18,6 +18,7 @@
     <span class="bg-word">CLOUD</span>
     <span class="bg-word">CLOUD</span>
   </div>
+  <div id="cloud-container"></div>
 
   <header>
     <h1><span class="highlight">MADELINE</span></h1>
@@ -178,6 +179,42 @@
           setTimeout(() => lightboxOverlay.style.display = 'none', 300);
         }
       });
+      // --- CLOUD BACKGROUND EFFECT ---
+const container = document.createElement("div");
+container.id = "cloud-container";
+document.body.appendChild(container);
+
+const numClouds = 12;
+const clouds = [];
+
+for (let i = 0; i < numClouds; i++) {
+  const img = document.createElement("img");
+  img.src = "cloud.png";
+  img.classList.add("cloud");
+  img.style.left = Math.random() * 100 + "vw";
+  img.style.top = Math.random() * 100 + "vh";
+  img.style.width = 80 + Math.random() * 120 + "px";
+  img.style.animationDelay = (Math.random() * 4) + "s";
+  container.appendChild(img);
+  clouds.push(img);
+}
+
+// Parallax-style movement
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  clouds.forEach((cloud, i) => {
+    const offset = (scrollY * (0.1 + i * 0.02)) % window.innerHeight;
+    cloud.style.transform = `translateY(${offset}px)`;
+  });
+});
+
+// Random repositioning
+setInterval(() => {
+  clouds.forEach(cloud => {
+    cloud.style.left = Math.random() * 100 + "vw";
+    cloud.style.top = Math.random() * 100 + "vh";
+  });
+}, 8000);
     })();
   </script>
 </body>
