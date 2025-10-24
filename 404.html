@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 – Not Supposed to Be Here</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #ff66cc;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: #ff99dd;
+      transform: scale(1.05);
+    }
+
+    .glitch {
+      position: relative;
+      font-size: 2rem;
+      color: #fff;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9; }
+      50% { text-shadow: -2px 2px #ff00c1, 2px -2px #00fff9; }
+      100% { text-shadow: 2px -2px #ff00c1, -2px 2px #00fff9; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glitch">you got somewhere you aint supposed to</h1>
+  <a href="http://latteonline.org/" class="btn">return</a>
+</body>
+</html>
